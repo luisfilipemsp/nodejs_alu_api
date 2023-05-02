@@ -33,6 +33,8 @@ jobs:
     - name: Build image and push to Docker Hub and GitHub Container Registry
       uses: docker/build-push-action@v2
       with:
+        tags: 
+          - v1
         context: ./
         push: ${{ github.ref == 'refs/heads/main'}}
         
