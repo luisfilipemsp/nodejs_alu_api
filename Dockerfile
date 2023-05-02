@@ -2,12 +2,15 @@ FROM node:18.16.0-alpine
 
 WORKDIR /app
 
-COPY package*.json ./
+#COPY package*.json ./
 
-RUN npm install
+#COPY /app/data/alumnos.txt ./data
 
 COPY . .
 
+RUN npm install
+
 EXPOSE 3000
 
-CMD ["npm", "start"]
+CMD ["node", "/app/app/index_api.js"]
+
